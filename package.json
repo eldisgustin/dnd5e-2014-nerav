@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "fast-glob": "^3.3.3",
+    "fs-extra": "^11.3.5",
     "lodash": "^4.18.1"
   }
 }

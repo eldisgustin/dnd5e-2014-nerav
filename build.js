@@ -1,7 +1,7 @@
 import fg from "fast-glob";
 import merge from "lodash/merge.js";
 import template from "lodash/template.js";
-import fs from "node:fs";
+import fs from "fs-extra";
 
 const files = await fg("data/**/*.json", { cwd: process.cwd() });
 const base = await JSON.parse(fs.readFileSync("base.json").toString());
@@ -21,4 +21,4 @@ const output = JSON.stringify(base);
 const t = template(output);
 const compiled = t({ version: process.env.RELEASE_VERSION });
 
-await fs.writeFileSync("dist/output.json", compiled);
+fs.outputFileSync("dist/output.json", compiled);
