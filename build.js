@@ -19,7 +19,7 @@ delete base["$schema"];
 
 const output = JSON.stringify(base);
 const t = template(output);
-const compiled = t({ version: process.env.RELEASE_VERSION });
+const compiled = t({ version: process.env.RELEASE_VERSION.replace("v", "") });
 
 console.log("writting file");
 
