@@ -1,0 +1,215 @@
+{
+  "$schema": "https://raw.githubusercontent.com/TheGiddyLimit/5etools-utils/master/schema/brew-fast/homebrew.json",
+  "subclass": [
+    {
+      "name": "Judge of Limbo",
+      "source": "ECDC-Nerav",
+      "className": "Warlock",
+      "classSource": "PHB",
+      "shortName": "Limbo",
+      "additionalSpells": [
+        {
+          "expanded": {
+            "1": ["cure wounds", "inflict wounds"],
+            "3": ["lesser restoration", "gentle repose"],
+            "5": ["animate dead", "feign death"],
+            "7": ["death ward", "spirit of death"],
+            "9": ["greater restoration", "raise dead"]
+          }
+        }
+      ],
+      "subclassFeatures": [
+        "A Delicate Balance|Warlock|PHB|Limbo|ECDC-Nerav|1",
+        "Expanded Spell List|Warlock|PHB|Limbo|ECDC-Nerav|1",
+        "Unnatural Body|Warlock|PHB|Limbo|ECDC-Nerav|6",
+        "Perpetuity|Warlock|PHB|Limbo|ECDC-Nerav|10",
+        "Borrowed Life|Warlock|PHB|Limbo|ECDC-Nerav|14"
+      ]
+    }
+  ],
+  "subclassFeature": [
+    {
+      "name": "A Delicate Balance",
+      "source": "ECDC-Nerav",
+      "level": 1,
+      "className": "Warlock",
+      "classSource": "PHB",
+      "subclassShortName": "Limbo",
+      "subclassSource": "ECDC-Nerav",
+      "entries": [
+        "Starting level 1 you learn the {@spell Spare the Dying} cantrip, which counts as a warlock cantrip. You also have advantage against any sickness related spell",
+        "Additionally, if any other creature that you can see within 30 feet would have their hp fall below 0 or less, you can use your reaction to transfer up to {@dice 1d4} + your Constitution modifier Hit Points to them. Once you use this effect, you cannot use it again until you finish a long rest."
+      ]
+    },
+    {
+      "name": "Expanded Spell List",
+      "source": "ECDC-Nerav",
+      "level": 1,
+      "className": "Warlock",
+      "classSource": "PHB",
+      "subclassShortName": "Limbo",
+      "subclassSource": "ECDC-Nerav",
+      "entries": [
+        "The Judge of Limbo allows you to learn new Warlock spells.",
+        "The following list is addd to the spells that you can learn:",
+        {
+          "type": "table",
+          "caption": "Expanded Spell List",
+          "colLabels": ["Warlock Level", "Spell"],
+          "colStyles": ["col-2 text-center", "col-10"],
+          "rows": [
+            ["1st", "{@spell Cure Wounds}, {@spell Inflict Wounds}"],
+            ["3rd", "{@spell Lesser Restoration}, {@spell Gentle repose}"],
+            ["5th", "{@spell Animate Dead}, {@spell Feign Death}"],
+            ["7th", "{@spell Death Ward}, {@spell Spirit of Death}"],
+            ["9th", "{@spell Greater Restoration}, {@spell Raise Dead}"]
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Unnatural Body",
+      "source": "ECDC-Nerav",
+      "className": "Warlock",
+      "classSource": "PHB",
+      "subclassShortName": "Limbo",
+      "subclassSource": "ECDC-Nerav",
+      "level": 6,
+      "entries": [
+        "Starting level 6, your body commences to slow down it's metabolis. You gain poison resistance and you only require 4 hours to benefit from a long rest."
+      ]
+    },
+    {
+      "name": "Perpetuity",
+      "source": "ECDC-Nerav",
+      "className": "Warlock",
+      "classSource": "PHB",
+      "subclassShortName": "Limbo",
+      "subclassSource": "ECDC-Nerav",
+      "level": 10,
+      "entries": [
+        "Starting your 10th level, you can keep your breath indefinetely, you don't require food, water or sleep. Althought to benefit from rests you still need to perform them.",
+        "You age slowly. Every 10 years your body only ages 1, additionaly you are immune to being magically aged."
+      ]
+    },
+    {
+      "name": "Borrowed Life",
+      "source": "ECDC-Nerav",
+      "className": "Warlock",
+      "classSource": "PHB",
+      "subclassShortName": "Limbo",
+      "subclassSource": "ECDC-Nerav",
+      "level": 14,
+      "entries": [
+        "When you reach 14th level, your body gains accelerated regenerative capacities. On combat during yoiur turn you can use your bonus action to recover {@dice 1d8} + your Warlock level Hit points. Additionally you can use this feature to re-attach lost body parts without any inconvenient.",
+        "Once you use this feature, you cannot use it again until the next short or long rest."
+      ]
+    }
+  ],
+  "foundrySubclassFeature": [
+    {
+      "name": "A Delicate Balance",
+      "source": "ECDC-Nerav",
+      "className": "Warlock",
+      "classSource": "PHB",
+      "subclassShortName": "Limbo",
+      "subclassSource": "ECDC-Nerav",
+      "level": 1,
+      "system": {
+        "img": "icons/magic/life/cross-beam-green.webp",
+        "activities": [
+          {
+            "name": "Heal",
+            "type": "heal",
+            "activation": {
+              "type": "reaction",
+              "cost": 1
+            },
+            "range": {
+              "units": "ft",
+              "value": "30"
+            },
+            "healing": {
+              "types": ["healing"],
+              "number": 1,
+              "denomination": 4,
+              "bonus": "+ @abilities.cha.mod"
+            },
+            "uses": {
+              "value": 1,
+              "max": "1",
+              "recovery": [
+                {
+                  "period": "lr",
+                  "type": "recoverAll"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Unnatural Body",
+      "source": "ECDC-Nerav",
+      "className": "Warlock",
+      "classSource": "PHB",
+      "subclassShortName": "Limbo",
+      "subclassSource": "ECDC-Nerav",
+      "level": 6,
+      "system": {
+        "effects": [
+          {
+            "name": "Unnatural Body",
+            "img": "icons/magic/control/buff-strength-muscle-damage.webp",
+            "type": "base",
+            "changes": [
+              {
+                "key": "system.traits.dr.value",
+                "mode": 4,
+                "value": "poison",
+                "priority": 20
+              }
+            ],
+            "transfer": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "Borrowed Life",
+      "source": "ECDC-Nerav",
+      "className": "Warlock",
+      "classSource": "PHB",
+      "subclassShortName": "Limbo",
+      "subclassSource": "ECDC-Nerav",
+      "level": 14,
+      "system": {
+        "img": "icons/magic/life/heart-cross-purple-orange.webp",
+        "type": "heal",
+        "activation.type": "bonus",
+        "duration.units": "inst",
+        "target.affects.type": "self",
+        "uses": {
+          "recovery": [
+            {
+              "period": "sr",
+              "type": "recoverAll"
+            },
+            {
+              "period": "lr",
+              "type": "recoverAll"
+            }
+          ],
+          "max": "1"
+        },
+        "healing": {
+          "types": ["healing"],
+          "number": 4,
+          "denomination": 4,
+          "bonus": "+ @classes.warlock.levels"
+        }
+      }
+    }
+  ]
+}

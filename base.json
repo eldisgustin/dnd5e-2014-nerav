@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/TheGiddyLimit/5etools-utils/master/schema/brew-fast/homebrew.json",
+  "siteVersion": "2.28.0",
+  "_meta": {
+    "sources": [
+      {
+        "json": "ECDC-Nerav",
+        "abbreviation": "Nerav",
+        "full": "El Colmillo de Cobre: Nerav",
+        "version": "${{ version }}",
+        "authors": ["eldisgustin"],
+        "color": "322b64",
+        "colorNight": "c796f8"
+      }
+    ],
+    "dateAdded": 1779137781,
+    "dateLastModified": 1779137781,
+    "edition": "classic"
+  }
+}
