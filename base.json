@@ -7,7 +7,7 @@
         "json": "ECDC-Nerav",
         "abbreviation": "Nerav",
         "full": "El Colmillo de Cobre: Nerav",
-        "version": "${{ version }}",
+        "version": "<%= version %>",
         "authors": ["eldisgustin"],
         "color": "322b64",
         "colorNight": "c796f8"
