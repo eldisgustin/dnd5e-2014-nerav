@@ -39,3 +39,4 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: dist/output.json
           asset_name: Nerav.json
+          asset_content_type: application/json
