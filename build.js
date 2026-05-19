@@ -7,12 +7,11 @@ const files = await fg("data/**/*.json", { cwd: process.cwd() });
 const base = await JSON.parse(fs.readFileSync("base.json").toString());
 
 for (const file of files) {
-  const [, accessPath] = file.split("/");
   const content = JSON.parse(fs.readFileSync(file).toString());
 
   delete content["$schema"];
 
-  merge(base, { [accessPath]: content });
+  merge(base, content);
 }
 
 delete base["$schema"];
