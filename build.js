@@ -21,4 +21,6 @@ const output = JSON.stringify(base);
 const t = template(output);
 const compiled = t({ version: process.env.RELEASE_VERSION });
 
+console.log("writting file");
+
 fs.outputFileSync("dist/output.json", compiled);
